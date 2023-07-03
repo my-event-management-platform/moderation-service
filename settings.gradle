@@ -1,1 +1,4 @@
 rootProject.name = 'moderation-service'
+
+include ':shared'
+project(':shared').projectDir = new File('../shared')
