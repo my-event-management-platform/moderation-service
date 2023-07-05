@@ -43,7 +43,7 @@ public class KafkaEventService {
         kafkaTemplate.send(message);
     }
 
-    @KafkaListener(topics = "event-submitted-kafka-events", groupId = "moderationGroup")
+    @KafkaListener(topics = "event-submitted-kafka-events")
     private void consumeEventSubmitted(EventSubmitted eventSubmitted) {
         Event event = kafkaEventMapper.toEvent(eventSubmitted);
         eventModerationService.addEventForReviewal(event);
